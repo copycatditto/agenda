@@ -1,4 +1,3 @@
-C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\obj\Debug\ConsoleApp9.csprojAssemblyReference.cache
 C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\obj\Debug\ConsoleApp9.csproj.CoreCompileInputs.cache
 C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\bin\Debug\ConsoleApp9.exe.config
 C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\bin\Debug\ConsoleApp9.exe

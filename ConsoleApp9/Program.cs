@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -13,6 +14,11 @@ namespace ConsoleApp9
 
         static void Main(string[] args)
         {
+
+            DataTable oDataAgenda = new DataTable(); 
+
+            cAgenda oAgenda = new cAgenda();
+
             agenda = new List<cAgenda>();
 
         oMenu:
@@ -89,9 +95,9 @@ namespace ConsoleApp9
             }
 
         oFisica:
-            String oCnpj = null;
-            String oInscEstad = null;
-            String oDataCriaEmp = null;
+            String oCnpj = "";
+            String oInscEstad = "";
+            String oDataCriaEmp = "";
             Console.WriteLine("");
 
             Console.Write("CPF: ");
@@ -121,10 +127,10 @@ namespace ConsoleApp9
             goto oEnderecos;
 
         oJuridica:
-            oCpf = null;
-            oRg = null;
-            oSexo = null;
-            oDoB = null;
+            oCpf = "";
+            oRg = "";
+            oSexo = "";
+            oDoB = "";
             Console.WriteLine("");
 
             Console.Write("CNPJ: ");
@@ -227,6 +233,9 @@ namespace ConsoleApp9
             {
                 Console.WriteLine("Endereço de Entrega para " + p.Nome + ": " + p.EndEntr);
             }
+
+
+            
             Console.WriteLine("");
             Console.WriteLine("Pressione [Enter] para voltar ao Menu Principal.");
             Console.ReadLine();
@@ -267,7 +276,7 @@ namespace ConsoleApp9
             Console.WriteLine("");
             foreach (var p in agenda)
             {
-                Console.WriteLine("Endereços para " + p.Nome + ": " + p.EndEntr + ", " + p.EndCobr + ", e" + p.EndCorr);
+                Console.WriteLine("Endereços para " + p.Nome + ": " + p.EndEntr + ", " + p.EndCobr + ", e " + p.EndCorr);
             }
             Console.WriteLine("");
             Console.WriteLine("Pressione [Enter] para voltar ao Menu Principal.");
@@ -277,8 +286,22 @@ namespace ConsoleApp9
         oFinalizar:
             Console.Clear();
             Console.WriteLine("");
+            Console.WriteLine(@"Criando arquivo XML em [C:\temp] ...");
+            try
+            {
+                oDataAgenda = oAgenda.ConvertToDatatable(agenda);
+                DataSet oXML = new DataSet("Agenda");
+                oXML.Tables.Add(oDataAgenda);
+                oXML.WriteXml(@"c:\temp\agenda.xml");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("");
+                Console.WriteLine(ex.Message.ToString());
+                Console.WriteLine(ex.Source.ToString());
+                Console.WriteLine("");
+            }
             Console.WriteLine("Finalizando atividades...");
-
             Thread.Sleep(2000);
         }
 
