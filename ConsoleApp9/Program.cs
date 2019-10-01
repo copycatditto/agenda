@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp9
@@ -15,6 +16,7 @@ namespace ConsoleApp9
             agenda = new List<cAgenda>();
 
         oMenu:
+            Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("[ Menu Principal da Agenda ]");
             Console.WriteLine("[1] Cadastrar nova entrada");
@@ -52,13 +54,15 @@ namespace ConsoleApp9
                     Console.WriteLine("");
                     Console.WriteLine("Opção inválida.");
                     Console.WriteLine("Por favor siga as instruções da tela corretamente.");
+                    Thread.Sleep(2000);
                     goto oMenu;
             }
 
         oCadastrar:
+            Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("[ Informe dados solicitados ]");
-            Console.WriteLine("Nome:");
+            Console.Write("Nome: ");
             String oNome = Console.ReadLine();
 
         oTipoContato:
@@ -90,9 +94,9 @@ namespace ConsoleApp9
             String oDataCriaEmp = null;
             Console.WriteLine("");
 
-            Console.WriteLine("CPF:");
+            Console.Write("CPF: ");
             String oCpf = Console.ReadLine();
-            Console.WriteLine("RG:");
+            Console.Write("RG: ");
             String oRg = Console.ReadLine();
         oSexo:
             Console.WriteLine("Sexo:");
@@ -112,7 +116,7 @@ namespace ConsoleApp9
                     Console.WriteLine("Por favor siga as instruções da tela corretamente.");
                     goto oSexo;
             }
-            Console.WriteLine("Data de Nascimento:");
+            Console.Write("Data de Nascimento: ");
             String oDoB = Console.ReadLine();
             goto oEnderecos;
 
@@ -123,24 +127,24 @@ namespace ConsoleApp9
             oDoB = null;
             Console.WriteLine("");
 
-            Console.WriteLine("CNPFJ:");
+            Console.Write("CNPJ: ");
             oCnpj = Console.ReadLine();
-            Console.WriteLine("Inscrição Estadual:");
+            Console.Write("Inscrição Estadual: ");
             oInscEstad = Console.ReadLine();
-            Console.WriteLine("Data de Criação da Empresa:");
+            Console.Write("Data de Criação da Empresa: ");
             oDataCriaEmp = Console.ReadLine();
             goto oEnderecos;
 
         oEnderecos:
-            Console.WriteLine("Endereço de Correspondência:");
+            Console.Write("Endereço de Correspondência: ");
             String oEndCorr = Console.ReadLine();
-            Console.WriteLine("Endereço de Entrega:");
+            Console.Write("Endereço de Entrega: ");
             String oEndEntr = Console.ReadLine();
-            Console.WriteLine("Endereço de Cobrança:");
+            Console.Write("Endereço de Cobrança: ");
             String oEndCobr = Console.ReadLine();
 
         oSalvarOuNao:
-            Console.WriteLine("Digite [S] para Salvar ou [M] para voltar ao Menu sem salvar");
+            Console.WriteLine("Digite [S] para Salvar ou [M] para voltar ao Menu sem salvar.");
             String oSimNao = Console.ReadLine();
 
             switch (oSimNao.ToUpper())
@@ -196,25 +200,87 @@ namespace ConsoleApp9
                     Console.WriteLine("");
                     Console.WriteLine("Opção inválida.");
                     Console.WriteLine("Por favor siga as instruções da tela corretamente.");
+                    Thread.Sleep(2000);
                     goto oCadastrar;
             }
-        oFinalizar:
-            Console.WriteLine("======================================");
-            Console.WriteLine(" Programa finalizado sera finalizado ");
-            Console.WriteLine("======================================");
-            Console.WriteLine(" Lista de dados armazenados");
-            Console.WriteLine("======================================");
 
+        oNomes:
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("[ Lista de Nomes armazenados ]");
+            Console.WriteLine("");
             foreach (var p in agenda)
             {
-                Console.WriteLine("Nome:" + p.Nome + " Sexo:" +
-                        p.Cpf + " Nacionalidade" +
-                        p.Rg + " Naturalidade" +
-                        p.DoB + " ");
+                Console.WriteLine("Nome: " + p.Nome);
             }
-
-            Console.WriteLine(" Pressione <Enter> para finalizar.");
+            Console.WriteLine("");
+            Console.WriteLine("Pressione [Enter] para voltar ao Menu Principal.");
             Console.ReadLine();
+            goto oMenu;
+
+        oListaEndEntrega:
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("[ Lista de Endereços de Entrega armazenados ]");
+            Console.WriteLine("");
+            foreach (var p in agenda)
+            {
+                Console.WriteLine("Endereço de Entrega para " + p.Nome + ": " + p.EndEntr);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Pressione [Enter] para voltar ao Menu Principal.");
+            Console.ReadLine();
+            goto oMenu;
+
+        oListaEndCobranca:
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("[ Lista de Endereços de Cobrança armazenados ]");
+            Console.WriteLine("");
+            foreach (var p in agenda)
+            {
+                Console.WriteLine("Endereço de Cobrança para " + p.Nome + ": " + p.EndCobr);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Pressione [Enter] para voltar ao Menu Principal.");
+            Console.ReadLine();
+            goto oMenu;
+
+        oListaEndCorresp:
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("[ Lista de Endereços de Correspondência armazenados ]");
+            Console.WriteLine("");
+            foreach (var p in agenda)
+            {
+                Console.WriteLine("Endereço de Correspondência para " + p.Nome + ": " + p.EndCorr);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Pressione [Enter] para voltar ao Menu Principal.");
+            Console.ReadLine();
+            goto oMenu;
+
+        oListaEnd:
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("[ Lista de todos os Endereços armazenados ]");
+            Console.WriteLine("");
+            foreach (var p in agenda)
+            {
+                Console.WriteLine("Endereços para " + p.Nome + ": " + p.EndEntr + ", " + p.EndCobr + ", e" + p.EndCorr);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Pressione [Enter] para voltar ao Menu Principal.");
+            Console.ReadLine();
+            goto oMenu;
+
+        oFinalizar:
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("Finalizando atividades...");
+
+            Thread.Sleep(2000);
         }
+
     }
 }

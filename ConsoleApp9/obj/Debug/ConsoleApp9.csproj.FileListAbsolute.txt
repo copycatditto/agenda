@@ -5,3 +5,9 @@ C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\bin\Debug\ConsoleApp
 C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\bin\Debug\ConsoleApp9.pdb
 C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\obj\Debug\ConsoleApp9.exe
 C:\Users\eric.mpereira\source\repos\ConsoleApp9\ConsoleApp9\obj\Debug\ConsoleApp9.pdb
+C:\Users\eric.pereira\Source\Repos\copycatditto\agenda\ConsoleApp9\bin\Debug\ConsoleApp9.exe.config
+C:\Users\eric.pereira\Source\Repos\copycatditto\agenda\ConsoleApp9\bin\Debug\ConsoleApp9.exe
+C:\Users\eric.pereira\Source\Repos\copycatditto\agenda\ConsoleApp9\bin\Debug\ConsoleApp9.pdb
+C:\Users\eric.pereira\Source\Repos\copycatditto\agenda\ConsoleApp9\obj\Debug\ConsoleApp9.csprojAssemblyReference.cache
+C:\Users\eric.pereira\Source\Repos\copycatditto\agenda\ConsoleApp9\obj\Debug\ConsoleApp9.exe
+C:\Users\eric.pereira\Source\Repos\copycatditto\agenda\ConsoleApp9\obj\Debug\ConsoleApp9.pdb

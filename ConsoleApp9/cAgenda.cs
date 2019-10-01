@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp9
 {
-    class cAgenda
+    public class cAgenda
     {
         public cAgenda() { }
         public string Nome { get; set; }
@@ -36,18 +36,19 @@ namespace ConsoleApp9
                        string endcobr
                        )
         {
-            this.Nome = nome;
-            this.TipoContato = tipocontato;
-            this.Cpf = cpf;
-            this.Rg = rg;
-            this.Sexo = sexo;
-            this.DoB = dob;
-            this.Cnpj = cnpj;
-            this.InscEstad = inscestad;
-            this.DataCriaEmp = datacriaemp;
-            this.EndCorr = endcorr;
-            this.EndEntr = endentr;
-            this.EndCobr = endcobr;
+            Nome = nome;
+            TipoContato = tipocontato;
+            Cpf = cpf;
+            Rg = rg;
+            Sexo = sexo;
+            DoB = dob;
+            Cnpj = cnpj;
+            InscEstad = inscestad;
+            DataCriaEmp = datacriaemp;
+            EndCorr = endcorr;
+            EndEntr = endentr;
+            EndCobr = endcobr;
         }
+
     }
 }
